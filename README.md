@@ -16,3 +16,12 @@ docker run --name local_mysql5 --platform=linux/x86_64 -v mysql5:/var/lib/mysql 
 docker run --name local_postgres -v postgres:/var/lib/postgresql --network local -p 5432:5432 -e POSTGRES_HOST_AUTH_METHOD=trust -e POSTGRES_PASSWORD='admin' -e POSTGRES_USER='admin' postgres:12 
 ```
 
+### Mail catcher
+```bash
+docker run --name local_email -d --network local -p 1080:1080 -p 1025:1025 schickling/mailcatcher
+```
+
+### Redis
+```bash
+docker run --name local_redis -d --network local -p 6379:6379 redis
+```
